@@ -1,4 +1,6 @@
 import React from 'react';
+import {Provider} from 'react-redux';
+import store from './store'
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import SideBar from './components/common/SideBar' 
@@ -9,6 +11,7 @@ import Setting from './components/setting/Setting';
 class App extends React.Component {
   render() {
     return(
+      <Provider store={store}>
       <div className="App">
         <Router>
           <NavBar />
@@ -23,6 +26,7 @@ class App extends React.Component {
           </div>
         </Router>
       </div>
+      </Provider>
     )
   }  
 }

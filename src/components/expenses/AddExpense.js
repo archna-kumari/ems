@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 class AddExpense extends Component {
     constructor(props) {
         super(props)
-    
         this.state = {
             category: '',
             intemName: '',
@@ -13,6 +12,10 @@ class AddExpense extends Component {
         this.clickHandler=this.clickHandler.bind(this);
     }
     
+    clickHandler() {
+
+    }
+
     render() {
         return (
             <div className="addExpense">
