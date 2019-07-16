@@ -1,6 +1,7 @@
 .right-main-container{
   height:calc(100vh - 50px);
   overflow: auto;
+  width: 85%;
 }
 
 .d-flex{
@@ -35,3 +36,14 @@
 }
 
 
+.primary-btn{
+  min-width:100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #4287f5;
+  color: #fff;
+  font-weight:400;
+  padding: 8px 0px;
+  border-radius: 3px;
+}

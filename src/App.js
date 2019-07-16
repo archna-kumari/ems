@@ -4,6 +4,7 @@ import './App.css';
 import SideBar from './components/common/SideBar' 
 import NavBar from './components/common/NavBar';
 import Expense from './components/expenses/Expense';
+import Setting from './components/setting/Setting';
 
 class App extends React.Component {
   render() {
@@ -15,8 +16,9 @@ class App extends React.Component {
             <div className="sidebar-main-container">
               <SideBar />
             </div>
-            <div className="right-main-container">
+            <div className="d-flex justify-content-center align-items-center right-main-container">
              <Route exact path="/" component={Expense} />
+             <Route exact path="/settings" component={Setting} />
             </div>
           </div>
         </Router>
