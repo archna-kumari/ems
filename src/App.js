@@ -7,6 +7,7 @@ import SideBar from './components/common/SideBar'
 import NavBar from './components/common/NavBar';
 import Expense from './components/expenses/Expense';
 import Setting from './components/setting/Setting';
+import AddExpense from './components/expenses/AddExpense';
 
 class App extends React.Component {
   render() {
@@ -21,6 +22,7 @@ class App extends React.Component {
             </div>
             <div className="d-flex justify-content-center align-items-center right-main-container">
              <Route exact path="/" component={Expense} />
+             <Route exact path="/add-expense" component={AddExpense} />
              <Route exact path="/settings" component={Setting} />
             </div>
           </div>

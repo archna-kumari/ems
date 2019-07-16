@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {addExpense} from '../../actions/expenseAction'
-
+import './Expense.css';
 
 class AddExpense extends Component {
     constructor(props) {
@@ -18,11 +18,11 @@ class AddExpense extends Component {
 
     _renderCategoreis(){
         const {categories} = this.props;
-        categories.length > 0 ? (
-            categories.map(category =>{
-                return(
-                    <option key={category.id} value={category.id}>{category.name}</option>
-                )
+      return categories.length > 0 ? (
+                categories.map(category =>{
+                  return(
+                      <option key={category.id} value={category.id}>{category.name}</option>
+                  )
             })
         ):null;
     }
@@ -41,21 +41,24 @@ class AddExpense extends Component {
             let data = {category,name,amount};
             data.created_at = new Date().toISOString();
             this.props.addExpense(data);
+            this.props.history.push('/')
         }
     }
 
     render() {
         const {name, category, amount} = this.state;
         return (
-            <div className="addExpense">
+            <div className="d-flex flex-column addExpense-container">
                 <input name="name"
                         type="text"
+                        className="add-expense-filed"
                         value={name} 
                        onChange={this.onChange} 
                        placeholder="Enter expense name" 
                     />
                 <input name="amount"
                        type="number" 
+                       className="add-expense-filed"
                        value={amount}
                         onChange={this.onChange} 
                         placeholder="Enter amount"
@@ -64,12 +67,13 @@ class AddExpense extends Component {
                  className="select-category-item"
                  value={category}
                  name="category"
+                 className="add-expense-filed"
                  onChange={this.onChange}
                   >
                     <option>Select a category</option>
                     {this._renderCategoreis()}
                 </select>
-                <button onClick={this.clickHandler}>Add Expense</button>
+                <div className="primary-btn" onClick={this.submit}>Add Expense</div>
             </div>
         )
     }
