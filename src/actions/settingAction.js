@@ -1,4 +1,4 @@
-import {ADD_CATEGORY, UPDATE_CATEGORY, DELETE_CATEGORY} from './types';
+import {ADD_CATEGORY, UPDATE_CATEGORY, DELETE_CATEGORY,UPDATE_BUDGET} from './types';
 
 
 
@@ -13,6 +13,11 @@ export const updateCategory = (category) => dispatch =>{
 } 
 
 
-export const deleteCategory = (category) => dispatch =>{
-    dispatch({type:DELETE_CATEGORY,category})
+export const deleteCategory = (id) => dispatch =>{
+    dispatch({type:DELETE_CATEGORY,id})
 } 
+
+export const updateBudget = (budget) => dispatch =>{
+    dispatch({type:UPDATE_BUDGET,budget})
+} 
+

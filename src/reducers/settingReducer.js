@@ -1,4 +1,4 @@
-import {ADD_CATEGORY, UPDATE_CATEGORY, DELETE_CATEGORY} from '../actions/types';
+import {ADD_CATEGORY, UPDATE_CATEGORY, DELETE_CATEGORY,UPDATE_BUDGET} from '../actions/types';
 
 
 const initialState = {
@@ -9,12 +9,14 @@ const initialState = {
 
 
 export default function(state = initialState, action){
+    console.log(action);
+    console.log(state)
     switch(action.type){
         case ADD_CATEGORY:
             return{
+                ...state,
                 categories:[action.category, ...state.categories],
-                categoryLength:state.categoryLength+1,
-                ...state
+                categoryLength:state.categoryLength+1
             }
         case UPDATE_CATEGORY:
             const updated_categories = state.categories.map(category =>{
@@ -25,15 +27,21 @@ export default function(state = initialState, action){
                 }
             })
             return {
-                categories:updated_categories,
-                ...state
+                ...state,
+                categories:updated_categories
             }
 
         case DELETE_CATEGORY:
-             updated_categories = state.categories.filter(item => item.id !== action.category.id);
+            let updatedCategories = state.categories.filter(item => item.id !== action.id);
             return{
-                categories:updated_categories,
-                ...state
+                ...state,
+                categories:updatedCategories
+            }
+        case UPDATE_BUDGET:
+            console.log(action)
+            return{
+                ...state,
+                budget:parseInt(action.budget)
             }
         default:
             return state
