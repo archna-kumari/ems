@@ -1,4 +1,17 @@
+.setting-container{
+    width:80%;
+}
+
 .budget-input{
     padding: 4px 8px;
-    margin: 0px 16px;
+    width: 70%;
+}
+
+.setting-item-block{
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.setting-input-block{
+    width: 80%;
 }

@@ -5,7 +5,8 @@ class Setting extends Component {
     constructor(props){
         super(props);
         this.state = {
-            budget:''
+            budget:null,
+            category:''
         }
         this.updateBudget = this.updateBudget.bind(this)
         this.onChange = this.onChange.bind(this);
@@ -22,11 +23,30 @@ class Setting extends Component {
 
     render() {
         return (
-            <div className="setting-container">
-                <div className="d-flex align-items-center add-budget">
+            <div className="d-flex flex-column align-items-center setting-container">
+                <div className="d-flex align-items-center justify-content-between setting-item-block">
+                <div  className="d-flex align-items-center justify-content-between  setting-input-block">
                     <div>Total Budget</div>
-                    <input type="text" className="budget-input" name="budget" value={this.state.budget} onChange={this.onChange} />
+                    <input type="number" 
+                           className="budget-input"
+                            name="budget" 
+                            value={this.state.budget} 
+                            onChange={this.onChange} />
+                </div>
                     <div className="primary-btn" onClick={this.updateBudget}>Update</div>
+                </div>
+                <div className="d-flex align-items-center justify-content-between setting-item-block">
+                    <div  className="d-flex align-items-center justify-content-between setting-input-block">
+                    <div>Categories</div>
+                    <input type="text" 
+                           className="budget-input" 
+                           name="category" 
+                           value={this.state.category}
+                           onChange={this.onChange} 
+                           placeholder="Category name here"/>
+                    </div>
+                   
+                    <div className="primary-btn" onClick={this.updateBudget}>Add</div>
                 </div>
             </div>
         )
