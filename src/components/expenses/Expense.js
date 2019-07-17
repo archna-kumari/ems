@@ -81,6 +81,7 @@ class Expense extends Component {
                        <th>Name</th>
                        <th>Category</th>
                        <th>Amount</th>
+                       <th>Expense Date</th>
                        <th>Remove</th>
                      </tr>
                   </thead>

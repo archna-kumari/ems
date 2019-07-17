@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import {deleteExpense} from '../../actions/expenseAction';
+import moment from 'moment';
 
 
 class ExpenseItem extends Component {
@@ -22,6 +23,7 @@ class ExpenseItem extends Component {
             <td className="expense-name">{expense.name}</td>
             <td className="expense-name">{expense.category.name}</td>
             <td>{expense.amount}</td>
+            <td>{moment(new Date(expense.created_at)).format('DD MMM YY')}</td>
             <td><i className="material-icons  common-pointer" onClick={this.remove}>clear</i></td>
           </tr>
         )

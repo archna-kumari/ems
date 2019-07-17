@@ -76,7 +76,7 @@ class AddExpense extends Component {
                     <option>Select a category</option>
                     {this._renderCategoreis()}
                 </select>
-                <div className="primary-btn" onClick={this.submit}>Add Expense</div>
+                <div className="primary-btn common-pointer" onClick={this.submit}>Add Expense</div>
             </div>
         )
     }
