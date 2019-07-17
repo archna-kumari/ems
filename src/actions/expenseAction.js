@@ -7,11 +7,11 @@ export const addExpense = (expense) => dispatch =>{
 } 
 
 
-export const updateCategory = (expense) => dispatch =>{
+export const updateExpense = (expense) => dispatch =>{
     dispatch({type:UPDATE_EXPENSE,expense})
 } 
 
 
-export const deleteCategory = (id) => dispatch =>{
+export const deleteExpense = (id) => dispatch =>{
     dispatch({type:DELETE_EXPENSE,id})
 } 

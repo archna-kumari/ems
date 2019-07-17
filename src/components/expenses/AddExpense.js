@@ -32,21 +32,24 @@ class AddExpense extends Component {
     }
     
     submit() {
-        const {category,name,amount} = this.state;
+        const {categoryId,name,amount} = this.state;
+        const {categories} = this.props;
         let errors = {};
-        if(!category)errors.category = "field is required";
+        if(!categoryId)errors.categoryId = "field is required";
         if(!name)errors.name = "field is required";
         if(!amount)errors.amount = "field is required";
         if(Object.keys(errors).length === 0){
-            let data = {category,name,amount};
+            const categoryItem = categories.find(category => category.id == categoryId)
+            let data = {category:categoryItem,name,amount:parseInt(amount)};
             data.created_at = new Date().toISOString();
+            data.id = this.props.expenseLength + 1;
             this.props.addExpense(data);
             this.props.history.push('/')
         }
     }
 
     render() {
-        const {name, category, amount} = this.state;
+        const {name, categoryId, amount} = this.state;
         return (
             <div className="d-flex flex-column addExpense-container">
                 <input name="name"
@@ -65,8 +68,8 @@ class AddExpense extends Component {
                 />
                 <select 
                  className="select-category-item"
-                 value={category}
-                 name="category"
+                 value={categoryId}
+                 name="categoryId"
                  className="add-expense-filed"
                  onChange={this.onChange}
                   >
@@ -81,7 +84,9 @@ class AddExpense extends Component {
 
 const mapStateToProps = state =>({
     categories: state.setting.categories,
-    expenses:state.expense.expenses
+    expenses:state.expense.expenses,
+    expenseLength:state.expense.expenseLength,
+    
 })
 
 export default connect(mapStateToProps,{addExpense})(AddExpense);

@@ -6,3 +6,43 @@
     padding: 8px 12px;
     margin-bottom: 16px;
 }
+
+.expense-main-container{
+    width: 70%;
+}
+
+.exp-thead{
+    background: rgba(0,0,0,0.5);
+    padding: 8px 16px;
+}
+
+.expense-table{
+    width: 100%;
+}
+
+.expense-name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
+
+.expense-page-no{
+    width: 100%;
+    margin-top: 24px;
+}
+
+.pagination-item{
+    padding: 8px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+    margin-right: 8px
+}
+
+
+
+.overview-container{
+    padding: 16px;
+    border: solid 1px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.1);
+    width: 50%;
+}
